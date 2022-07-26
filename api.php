@@ -1,6 +1,9 @@
 <?php
     include __DIR__ . '/database.php';
+    // json_encode funzione che torna un valore in json
     $discs_json = json_encode($discs);
-    header ('Content-Type : application/json');
-    var_dump($discs_json);
+    // tipo di file
+    header('Content-Type: application/json');
+    // stampo
+    echo $discs_json;
 ?>
