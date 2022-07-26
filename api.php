@@ -4,6 +4,6 @@
     $discs_json = json_encode($discs);
     // tipo di file
     header('Content-Type: application/json');
-    // stampo
+    // stampo (per vedere cosa stampa immettere nell'url /nome del file al posto del file /index_ajax.html)
     echo $discs_json;
 ?>
