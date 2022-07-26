@@ -32,12 +32,13 @@
                 <div class="discs-container flex">
                     <!-- visualizzo ogni elemento -->
                     <!-- single disc -->
-                    <div class="disc">
+                    <!-- eseguo un ciclo v-for per stampare le card -->
+                    <div v-for="disc in albums" class="disc">
                         <!-- stampo quanto necessario -->
-                        <img class="poster" src="" alt="disc-img">
-                        <h2 class="disc-title" >titolo</h2>
-                        <div class="disc-author" >autore</div>
-                        <div class=" disc-year">anno</div>
+                        <img class="poster" :src="disc.poster" alt="disc-img">
+                        <h2 class="disc-title" >{{disc.title}}</h2>
+                        <div class="disc-author" >{{disc.author}}</div>
+                        <div class=" disc-year">{{disc.year}}</div>
                     </div> 
                 </div>
                 

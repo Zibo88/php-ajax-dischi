@@ -10,7 +10,12 @@ var app = new Vue (
         methods:{
             axioCall(){
                axios.get('http://localhost:8888/php-ajax-dischi/api.php').then((response) => {
+                //    osservo il tipo di dato
                     console.log(response)
+                    // ogni singolo data viene inserito ll'interno dell'array vuoto
+                    this.albums = response.data
+                    console.log(this.albums)
+
                } )
             }
         },
@@ -18,8 +23,5 @@ var app = new Vue (
         mounted(){
             this.axioCall()
         }
-       
-
-
     }
 )
