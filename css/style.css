@@ -21,6 +21,8 @@ img{
 
 .header-container{
     background-color: #2d3a46;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .logo{

@@ -9,4 +9,5 @@
     header('Content-Type: application/json');
     // stampo (per vedere cosa stampa immettere nell'url /nome del file al posto del file /index_ajax.html)
     echo $discs_json;
+    // per la select è importante sistemare prima la chiamata api filtrata
 ?>
