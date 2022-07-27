@@ -1,13 +1,27 @@
 
 <?php
     // costruzione api
-    // per visualizzarlo aggiungere api.php nell'url 
+    //  richiamo il foglio che presenta la struttura dati
     require __DIR__ . '/database.php';
-    // json_encode funzione che torna un valore in json
-    $discs_json = json_encode($discs);
-    // tipo di file
-    header('Content-Type: application/json');
-    // stampo (per vedere cosa stampa immettere nell'url /nome del file al posto del file /index_ajax.html)
-    echo $discs_json;
-    // per la select è importante sistemare prima la chiamata api filtrata
+        // se la  query genere che leggo tramite il $_GET è vuota o il genere scelto che leggo tramite il $_GET tramite select è all
+    if( empty($_GET['genre']) || $_GET['genre'] === 'all') {
+        // passa tutto l'array in formato json
+        header('Content-Type: application/json');
+        echo json_encode($discs);
+        // altrimenti
+    } else {
+        // creo un array vuoto per gli elementi filtrati
+        $filteredArray = [];
+        // per ogni elemento presente in discs, che si chiama disc,
+        foreach($discs as $disc) {
+            // se il disco del genere è uguale alla select dell'utente che leggo tramite il $_GET
+            if($disc['genre'] === $_GET['genre']) {
+                // l'array filtrato diventa popolato dai disc
+                $filteredArray[] = $disc;
+            }
+        }
+        // stampo l'array filtrato
+        header('Content-Type: application/json');
+        echo json_encode($filteredArray);
+    }
 ?>
