@@ -34,7 +34,6 @@
                     <!-- visualizzo ogni elemento -->
                     <!-- <?php var_dump($disc) ?> -->
 
-                    
                     <!-- single disc -->
                         <div class="disc">
                             <!-- stampo quanto necessario -->
@@ -43,6 +42,7 @@
                             <div class="disc-author" ><?php echo $disc['author'] ?></div>
                             <div class=" disc-year"><?php echo $disc['year'] ?></div>
                         </div>
+                        
                 <?php } ?>        
             </div>
             
